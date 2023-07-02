@@ -10,7 +10,7 @@ import SwiftUI
 import Combine
 import SwiftyJSON
 
-class Api {
+class StockModel {
     //get stocks
     func getStocks(urlString: String, completion: @escaping (Stocks) -> ()) {
         guard let url = URL(string: urlString) else {return}
@@ -93,9 +93,9 @@ class StocksModel: ObservableObject {
                     let author = i["author"].stringValue
                     let publishedAt = i["publishedAt"].stringValue
                     
-                    DispatchQueue.main.async {
-                        self.data.append(Stock())
-                    }
+//                    DispatchQueue.main.async {
+//                        self.data.append(item)
+//                    }
                 }
             } .resume()
         
